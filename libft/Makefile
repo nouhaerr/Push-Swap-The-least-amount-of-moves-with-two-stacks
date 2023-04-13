@@ -13,7 +13,7 @@
 CC= cc
 CFLAGS= -Wall -Wextra -Werror
 CFILES= ft_strlcat.c ft_atoi.c ft_isdigit.c call_error.c \
-	   	ft_strlen.c ft_split.c \
+	   	ft_strlen.c ft_split.c ft_strcmp.c\
 		ft_putstr.c ft_free.c\
 		
 OBJ= $(CFILES:.c=.o)

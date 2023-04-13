@@ -18,12 +18,6 @@
 # include <stdlib.h>
 # include <limits.h>
 
-typedef struct s_list
-{
-	void			*content;
-	struct s_list	*next;
-}	t_list;
-
 void	call_error(char *message);
 int		ft_isdigit(int c);
 size_t	ft_strlen(const char *s);
@@ -31,6 +25,7 @@ int		ft_atoi(const char *str);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 char	**ft_split(char const *s, char c);
 void	ft_putstr(char *s);
+int		ft_strcmp(const char *str1, const char *str2);
 void	ft_free(char **str);
 
 #endif
