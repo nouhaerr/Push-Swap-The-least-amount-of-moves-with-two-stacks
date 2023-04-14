@@ -37,6 +37,19 @@ static int	count_len(char **av)
 	return (len);
 }
 
+static void	check_spaces(char *str)
+{
+	int	i;
+	int	len;
+
+	i = 0;
+	len = ft_strlen(str);
+	while (str[i] == 32)
+		i++;
+	if (i == len)
+		call_error("Error\n");
+}
+
 static char	*separate_nbrs_input(char **av, int *len)
 {
 	int		i;
@@ -52,6 +65,7 @@ static char	*separate_nbrs_input(char **av, int *len)
 	nbrs[0] = '\0';
 	while (av[++i])
 	{
+		check_spaces(av[i]);
 		if (!*av[i])
 			call_error("Error\n");
 		tmp = ft_split(av[i], ' ');

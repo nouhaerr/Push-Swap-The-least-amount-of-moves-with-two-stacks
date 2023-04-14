@@ -18,16 +18,21 @@ int	chunk_sort(t_stack **a, t_stack **b, int size)
 	int	chunk;
 
 	count = 0;
-	chunk = 13;
+	chunk = 15;
 	if (size >= 500)
-		chunk = 35;
+		chunk = 30;
 	while (*a)
 	{
-		if ((*a)->nbr < (count + chunk))
+		if ((*a)->nbr <= count)
 		{
 			push(a, b, "pb\n");
-			if ((*b) && (*b)->nbr < (count + 1))
+			if ((*b))
 				rotate(b, "rb\n");
+			count++;
+		}
+		else if ((*a)->nbr > count && ((*a)->nbr < count + chunk))
+		{
+			push(a, b, "pb\n");
 			count++;
 		}
 		else
